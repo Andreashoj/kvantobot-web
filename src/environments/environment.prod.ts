@@ -6,6 +6,6 @@ export const environment = {
     scope: 'identify email'
   },
   backend: {
-    url: 'https://your-api-app.azurewebsites.net/api' // Update this with your actual Azure URL
+    url: 'https://kvantobot-api.azurewebsites.net/api'
   }
 };

@@ -12,7 +12,9 @@ import { DiscordAuthService } from '../../core/services/discord-auth.service';
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center py-4">
             <div class="flex items-center space-x-3">
-              <h1 class="text-2xl font-bold text-white">🎰 KvantoBot Dashboard</h1>
+              <h1 class="text-3xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent">
+                Kvantos Paradise
+              </h1>
             </div>
             
             <div class="flex items-center space-x-4">
@@ -40,15 +42,17 @@ import { DiscordAuthService } from '../../core/services/discord-auth.service';
       <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         @if (user(); as userInfo) {
           <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/20 mb-8">
-            <h2 class="text-2xl font-semibold text-white mb-4">Welcome, {{ displayName() }}! 👋</h2>
-            <p class="text-kvanto-50/80 mb-4">
-              Your gamba stats and leaderboard will appear here soon. The backend integration is coming next!
+            <h2 class="text-3xl font-semibold text-white mb-4">
+              Welcome to the paradise, <span class="bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent">{{ displayName() }}</span>!
+            </h2>
+            <p class="text-kvanto-50/80 mb-4 text-lg">
+              Step into the ultimate gambling experience. Your fortune awaits in the games ahead.
             </p>
             
             <!-- User Info Card -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div class="bg-black/20 rounded-xl p-4">
-                <h3 class="text-lg font-semibold text-white mb-2">Account Info</h3>
+              <div class="bg-black/20 rounded-xl p-4 border border-amber-500/20">
+                <h3 class="text-lg font-semibold text-amber-300 mb-2">Player Profile</h3>
                 <div class="space-y-2">
                   <p class="text-kvanto-50/80"><span class="font-medium">Discord ID:</span> {{ userInfo.id }}</p>
                   @if (userInfo.global_name) {
@@ -61,37 +65,37 @@ import { DiscordAuthService } from '../../core/services/discord-auth.service';
                 </div>
               </div>
               
-              <div class="bg-black/20 rounded-xl p-4">
-                <h3 class="text-lg font-semibold text-white mb-2">Gamba Stats</h3>
+              <div class="bg-black/20 rounded-xl p-4 border border-amber-500/20">
+                <h3 class="text-lg font-semibold text-amber-300 mb-2">Casino Stats</h3>
                 <div class="space-y-2">
-                  <p class="text-kvanto-50/80">🎰 <span class="font-medium">Current Balance:</span> Loading...</p>
-                  <p class="text-kvanto-50/80">🏆 <span class="font-medium">Leaderboard Rank:</span> Loading...</p>
-                  <p class="text-kvanto-50/80">📊 <span class="font-medium">Total Games:</span> Loading...</p>
+                  <p class="text-kvanto-50/80"><span class="font-medium text-yellow-400">Kvanto Coins:</span> Loading...</p>
+                  <p class="text-kvanto-50/80"><span class="font-medium text-yellow-400">House Rank:</span> Loading...</p>
+                  <p class="text-kvanto-50/80"><span class="font-medium text-yellow-400">Games Played:</span> Loading...</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <!-- Coming Soon Section -->
-          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/20">
-            <h3 class="text-xl font-semibold text-white mb-4">🚧 Coming Soon</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div class="bg-black/20 rounded-lg p-4 text-center">
-                <div class="text-3xl mb-2">🎰</div>
-                <h4 class="font-semibold text-white">Live Gambling</h4>
-                <p class="text-sm text-kvanto-50/80">Gamble directly from the web</p>
+          <!-- Casino Games Section -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-amber-500/30">
+            <h3 class="text-2xl font-semibold text-amber-300 mb-6 text-center">The House Always Has More</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="bg-black/30 rounded-lg p-6 text-center border border-amber-500/20 hover:border-amber-500/40 transition-all duration-300">
+                <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-full mx-auto mb-4 flex items-center justify-center text-black font-bold text-xl">$</div>
+                <h4 class="font-semibold text-white text-lg mb-2">Live Casino</h4>
+                <p class="text-sm text-kvanto-50/80">Place your bets directly from paradise</p>
               </div>
               
-              <div class="bg-black/20 rounded-lg p-4 text-center">
-                <div class="text-3xl mb-2">📊</div>
-                <h4 class="font-semibold text-white">Detailed Stats</h4>
-                <p class="text-sm text-kvanto-50/80">View your gambling history</p>
+              <div class="bg-black/30 rounded-lg p-6 text-center border border-amber-500/20 hover:border-amber-500/40 transition-all duration-300">
+                <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-full mx-auto mb-4 flex items-center justify-center text-black font-bold text-xl">%</div>
+                <h4 class="font-semibold text-white text-lg mb-2">Fortune Analytics</h4>
+                <p class="text-sm text-kvanto-50/80">Track your wins and losses in style</p>
               </div>
               
-              <div class="bg-black/20 rounded-lg p-4 text-center">
-                <div class="text-3xl mb-2">🏆</div>
-                <h4 class="font-semibold text-white">Leaderboards</h4>
-                <p class="text-sm text-kvanto-50/80">See who's winning big</p>
+              <div class="bg-black/30 rounded-lg p-6 text-center border border-amber-500/20 hover:border-amber-500/40 transition-all duration-300">
+                <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-full mx-auto mb-4 flex items-center justify-center text-black font-bold text-xl">#</div>
+                <h4 class="font-semibold text-white text-lg mb-2">High Rollers</h4>
+                <p class="text-sm text-kvanto-50/80">See who rules the paradise</p>
               </div>
             </div>
           </div>

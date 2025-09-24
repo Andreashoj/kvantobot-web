@@ -9,8 +9,10 @@ import { DiscordAuthService } from '../../core/services/discord-auth.service';
     <div class="min-h-screen bg-gradient-to-br from-kvanto-900 via-kvanto-800 to-kvanto-700 flex items-center justify-center p-4">
       <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/20 max-w-md w-full">
         <div class="text-center mb-8">
-          <h1 class="text-4xl font-bold text-white mb-2">🎰 KvantoBot</h1>
-          <p class="text-kvanto-50/80 text-lg">Gamba Web Dashboard</p>
+          <h1 class="text-4xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent mb-2">
+            Kvantos Paradise
+          </h1>
+          <p class="text-kvanto-50/80 text-lg">Your gateway to gambling paradise</p>
         </div>
         
         @if (authService.isLoading()) {
@@ -32,7 +34,7 @@ import { DiscordAuthService } from '../../core/services/discord-auth.service';
         
         <div class="mt-6 text-center">
           <p class="text-kvanto-50/60 text-sm">
-            Login with your Discord account to view your gamba stats and compete on the leaderboard!
+            Enter the paradise with your Discord account. Check your fortune, climb the high roller ranks, and claim your place among the elite!
           </p>
         </div>
       </div>

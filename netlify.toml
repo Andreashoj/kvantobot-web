@@ -1,6 +1,6 @@
 [build]
   publish = "dist/kvantobot-web/browser"
-  command = "npm run build"
+  command = "npx @angular/cli build"
 
 [build.environment]
   NODE_VERSION = "20"

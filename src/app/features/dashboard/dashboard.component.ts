@@ -19,9 +19,9 @@ import { DiscordAuthService } from '../../core/services/discord-auth.service';
               @if (user(); as userInfo) {
                 <div class="flex items-center space-x-3">
                   @if (avatarUrl()) {
-                    <img [src]="avatarUrl()" [alt]="userInfo.username" class="w-8 h-8 rounded-full">
+                    <img [src]="avatarUrl()" [alt]="displayName()" class="w-8 h-8 rounded-full">
                   }
-                  <span class="text-white font-medium">{{ userInfo.username }}</span>
+                  <span class="text-white font-medium">{{ displayName() }}</span>
                 </div>
               }
               
@@ -40,7 +40,7 @@ import { DiscordAuthService } from '../../core/services/discord-auth.service';
       <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         @if (user(); as userInfo) {
           <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/20 mb-8">
-            <h2 class="text-2xl font-semibold text-white mb-4">Welcome, {{ userInfo.username }}! 👋</h2>
+            <h2 class="text-2xl font-semibold text-white mb-4">Welcome, {{ displayName() }}! 👋</h2>
             <p class="text-kvanto-50/80 mb-4">
               Your gamba stats and leaderboard will appear here soon. The backend integration is coming next!
             </p>
@@ -51,6 +51,9 @@ import { DiscordAuthService } from '../../core/services/discord-auth.service';
                 <h3 class="text-lg font-semibold text-white mb-2">Account Info</h3>
                 <div class="space-y-2">
                   <p class="text-kvanto-50/80"><span class="font-medium">Discord ID:</span> {{ userInfo.id }}</p>
+                  @if (userInfo.global_name) {
+                    <p class="text-kvanto-50/80"><span class="font-medium">Display Name:</span> {{ userInfo.global_name }}</p>
+                  }
                   <p class="text-kvanto-50/80"><span class="font-medium">Username:</span> {{ userInfo.username }}</p>
                   @if (userInfo.email) {
                     <p class="text-kvanto-50/80"><span class="font-medium">Email:</span> {{ userInfo.email }}</p>
@@ -113,6 +116,12 @@ export class DashboardComponent {
       return `https://cdn.discordapp.com/avatars/${currentUser.id}/${currentUser.avatar}.png`;
     }
     return null;
+  });
+  
+  protected readonly displayName = computed(() => {
+    const currentUser = this.user();
+    // Prefer display name (global_name) over username, fallback to username if no display name
+    return currentUser?.global_name || currentUser?.username || 'Unknown User';
   });
   
   logout(): void {

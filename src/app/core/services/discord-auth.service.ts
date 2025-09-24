@@ -5,6 +5,7 @@ import { environment } from '../../../environments/environment';
 export interface DiscordUser {
   id: string;
   username: string;
+  global_name?: string; // Display name (preferred over username)
   discriminator: string;
   avatar: string | null;
   email?: string;

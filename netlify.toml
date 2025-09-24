@@ -1,9 +1,10 @@
 [build]
   publish = "dist/kvantobot-web/browser"
-  command = "npm install && npx ng build"
+  command = "npm ci --include=dev && npm run build"
 
 [build.environment]
   NODE_VERSION = "20"
+  NODE_ENV = "production"
 
 [[redirects]]
   from = "/*"

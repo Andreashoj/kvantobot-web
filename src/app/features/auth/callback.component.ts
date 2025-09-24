@@ -7,8 +7,10 @@ import { DiscordAuthService } from '../../core/services/discord-auth.service';
   selector: 'app-callback',
   imports: [CommonModule],
   template: `
-    <div class="min-h-screen bg-gradient-to-br from-kvanto-900 via-kvanto-800 to-kvanto-700 flex items-center justify-center p-4">
-      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/20 max-w-md w-full text-center">
+    <div class="min-h-screen bg-gradient-to-br from-kvanto-900 via-kvanto-800 to-kvanto-700 relative overflow-hidden flex items-center justify-center p-4">
+      <!-- Casino table felt overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-green-900/20 via-green-800/30 to-green-700/20"></div>
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-casino-gold-400/30 max-w-md w-full text-center relative z-10">
         @if (isProcessing) {
           <div class="flex flex-col items-center space-y-4">
             <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-white"></div>
@@ -22,7 +24,7 @@ import { DiscordAuthService } from '../../core/services/discord-auth.service';
             <p class="text-kvanto-50/80">{{ errorMessage }}</p>
             <button 
               (click)="goToLogin()"
-              class="bg-kvanto-600 hover:bg-kvanto-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+              class="bg-casino-red-500 hover:bg-casino-red-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200 border border-casino-gold-400/30"
             >
               Try Again
             </button>

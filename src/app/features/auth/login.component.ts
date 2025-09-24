@@ -6,10 +6,12 @@ import { DiscordAuthService } from '../../core/services/discord-auth.service';
   selector: 'app-login',
   imports: [CommonModule],
   template: `
-    <div class="min-h-screen bg-gradient-to-br from-kvanto-900 via-kvanto-800 to-kvanto-700 flex items-center justify-center p-4">
-      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/20 max-w-md w-full">
+    <div class="min-h-screen bg-gradient-to-br from-kvanto-900 via-kvanto-800 to-kvanto-700 relative overflow-hidden flex items-center justify-center p-4">
+      <!-- Casino table felt overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-green-900/20 via-green-800/30 to-green-700/20"></div>
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-casino-gold-400/30 max-w-md w-full relative z-10">
         <div class="text-center mb-8">
-          <h1 class="text-4xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent mb-2">
+          <h1 class="text-4xl font-bold bg-gradient-to-r from-casino-red-500 via-casino-gold-400 to-casino-red-600 bg-clip-text text-transparent mb-2 drop-shadow-lg">
             Kvantos Paradise
           </h1>
           <p class="text-kvanto-50/80 text-lg">Your gateway to gambling paradise</p>
